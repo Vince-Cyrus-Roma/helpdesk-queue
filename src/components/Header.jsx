@@ -1,3 +1,4 @@
+import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 export function Header() {
@@ -12,7 +13,17 @@ export function Header() {
         onClick={toggleTheme}
         aria-label="Toggle display theme"
       >
-        {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+        {theme === "light" ? (
+          <>
+            <Moon size={16} />
+            <span>Dark Mode</span>
+          </>
+        ) : (
+          <>
+            <Sun size={16} />
+            <span>Light Mode</span>
+          </>
+        )}
       </button>
     </header>
   );
